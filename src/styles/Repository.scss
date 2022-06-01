@@ -1,0 +1,40 @@
+section.Repository-Section{
+    margin-top: 80px;
+    margin-left: 80px;
+
+    h1 {
+        font-size: 3rem;
+
+        margin-bottom: 30px;
+    }
+
+    ul {
+        list-style: none;
+
+        li{
+            margin-right: 60%;
+
+            h2{
+                margin-bottom: 10px;
+            }
+
+            p{
+                margin-bottom: 17px;
+
+                color: #a2a4a7;
+                text-align: justify;
+            }
+
+            a{
+                font-size: 1.2rem;
+                color: #1b83ac;
+
+                text-decoration: none;
+            }
+
+            & + li{
+                margin-top: 50px;
+            }
+        }
+    }
+}
