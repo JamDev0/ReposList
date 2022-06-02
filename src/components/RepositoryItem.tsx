@@ -1,4 +1,10 @@
-export function RepositoryItem({ Title, Description, Link }){
+interface RepositoryItemProps {
+    Title: string
+    Description?: string
+    Link: string
+}
+
+export function RepositoryItem({ Title, Description, Link }: RepositoryItemProps){
     return(
         <li>
             <h2>{Title}</h2>

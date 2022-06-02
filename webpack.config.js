@@ -9,7 +9,7 @@ const IsDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = {
     mode: IsDevelopment ? 'development' : 'production', // Define o modo com que vai ser executado o webpack
     devtool: IsDevelopment ? 'eval-source-map' : 'source-map', // Define um tipo de source map -> ferramenta que remapeia os arquivos, deixa cada coisa no seu lugar apos o arquivo ser buildado, para na hora de um erro ser possivel identificar oque aconteceu direitin.
-    entry: path.resolve(__dirname, 'src', 'index.jsx'), // Define o arquivo de entrada do webpack
+    entry: path.resolve(__dirname, 'src', 'index.tsx'), // Define o arquivo de entrada do webpack
     output: { // Define o arquivo de saida do webpack, o arquivo transformado
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
@@ -25,12 +25,12 @@ module.exports = {
         hot: true,
     },
     resolve: {
-        extensions: ['.js', '.jsx'], // Diz quais são os tipos de arquivo que o webpack tem que converter
+        extensions: ['.js', '.jsx', '.ts', '.tsx'], // Diz quais são os tipos de arquivo que o webpack tem que converter
     },
     module: {
         rules: [
             {
-                test: /\.jsx$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use: {
                     loader:'babel-loader',
